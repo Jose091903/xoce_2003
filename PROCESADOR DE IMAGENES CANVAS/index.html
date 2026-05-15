@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesador de Imágenes Canvas</title>
+    <meta name="description" content="Aplicación web para aplicar filtros a imágenes usando manipulación matemática de píxeles en HTML5 Canvas.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Procesador de Imágenes Canvas</h1>
+            <p>Sube una imagen y aplica filtros matemáticos a nivel de píxel.</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <label for="imageLoader" class="custom-file-upload">
+                    Cargar Imagen
+                </label>
+                <input type="file" id="imageLoader" accept=".jpg, .jpeg, .png">
+            </div>
+
+            <div class="canvas-wrapper" id="canvasWrapper">
+                <!-- El canvas principal donde ocurre la magia -->
+                <canvas id="mainCanvas"></canvas>
+                <!-- Un input range superpuesto para controlar la división visual -->
+                <input type="range" id="splitSlider" min="0" max="100" value="50" class="slider" disabled>
+            </div>
+
+            <div class="controls-section">
+                <button id="btnSepia" class="filter-btn" disabled>Sepia</button>
+                <button id="btnInvert" class="filter-btn" disabled>Invertir</button>
+                <button id="btnBinary" class="filter-btn" disabled>Binario (B/N)</button>
+                <button id="btnReset" class="action-btn" disabled>Resetear</button>
+                <button id="btnDownload" class="download-btn" disabled>Descargar</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
